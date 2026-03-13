@@ -18,27 +18,59 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
+font-family:Arial;
 }
 
+/* BODY */
+
 body{
-font-family:Arial;
-background:#0b0f17;
+background:#05070d;
 color:white;
+overflow-x:hidden;
+}
+
+/* ANIMATED CIRCUIT BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background-image:
+linear-gradient(rgba(0,183,255,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,183,255,0.05) 1px, transparent 1px);
+background-size:50px 50px;
+animation:circuitMove 30s linear infinite;
+z-index:-1;
+}
+
+@keyframes circuitMove{
+0%{transform:translate(0,0)}
+100%{transform:translate(-200px,-200px)}
 }
 
 /* NAVIGATION */
 
 nav{
-background:black;
-padding:15px 40px;
+position:sticky;
+top:0;
+background:#000;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px 40px;
 border-bottom:2px solid #00b7ff;
+z-index:100;
 }
 
-nav h1{
-color:#00b7ff;
+.logo{
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:40px;
+margin-right:10px;
 }
 
 nav ul{
@@ -47,13 +79,14 @@ list-style:none;
 }
 
 nav ul li{
-margin-left:20px;
+margin-left:25px;
 }
 
 nav ul li a{
-color:white;
 text-decoration:none;
+color:white;
 font-size:14px;
+transition:.3s;
 }
 
 nav ul li a:hover{
@@ -63,31 +96,39 @@ color:#00b7ff;
 /* HERO */
 
 .hero{
-height:80vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 
-background:
-radial-gradient(circle at 20% 30%, #0b2c52 0%, transparent 40%),
-radial-gradient(circle at 80% 70%, #07172c 0%, transparent 40%),
-#000;
+background:radial-gradient(circle at center,#0b2c52 0%,#000 80%);
 }
 
-.hero h2{
-font-size:42px;
+.hero h1{
+font-size:46px;
+margin-bottom:15px;
+}
+
+.hero p{
+opacity:.85;
 }
 
 .button{
-margin-top:20px;
+margin-top:25px;
 background:#00b7ff;
-padding:12px 30px;
+padding:14px 35px;
 color:black;
 font-weight:bold;
+border-radius:6px;
 text-decoration:none;
-border-radius:4px;
+transition:.3s;
+}
+
+.button:hover{
+background:#0dd3ff;
+transform:scale(1.05);
 }
 
 /* SECTION */
@@ -96,61 +137,83 @@ border-radius:4px;
 width:90%;
 max-width:1200px;
 margin:auto;
-padding:60px 0;
+padding:70px 0;
 }
 
 .section-title{
-font-size:30px;
+font-size:32px;
 color:#00b7ff;
-margin-bottom:30px;
-border-bottom:1px solid #333;
-padding-bottom:10px;
+margin-bottom:40px;
+text-align:center;
 }
 
-/* GRID */
+/* SERVICE GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
 }
 
 .card{
-background:#121826;
-padding:25px;
-border-radius:10px;
-border:1px solid #1d2b3f;
-transition:.3s;
+background:#0f1626;
+padding:30px;
+border-radius:12px;
+border:1px solid #1b2b40;
+transition:.35s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-10px);
 border-color:#00b7ff;
+box-shadow:0 0 20px rgba(0,183,255,.35);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#00b7ff;
+}
+
+.card ul{
+line-height:1.7;
 }
 
 /* QUOTE */
 
 .calculator{
 background:#05070d;
-padding:40px;
+padding:60px;
 text-align:center;
 }
 
 .calculator select,
 .calculator button{
-padding:10px;
+padding:12px;
 margin:10px;
+border-radius:5px;
+border:none;
+}
+
+.calculator button{
+background:#00b7ff;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* MAP */
 
 .map{
 width:100%;
-height:400px;
+height:420px;
 border:none;
 }
 
-/* FORMS */
+/* CONTACT */
+
+.contact{
+padding:70px 20px;
+text-align:center;
+}
 
 form input,
 form textarea{
@@ -159,41 +222,46 @@ max-width:500px;
 padding:12px;
 margin:10px auto;
 display:block;
+border-radius:6px;
 border:none;
-border-radius:5px;
 }
 
 form button{
 background:#00b7ff;
-padding:12px 25px;
+padding:14px 25px;
 border:none;
 font-weight:bold;
 cursor:pointer;
-}
-
-/* CONTACT */
-
-.contact{
-background:#0b0f17;
-padding:60px 20px;
-text-align:center;
-}
-
-/* REVIEWS */
-
-.reviews{
-background:#05070d;
-padding:60px;
-text-align:center;
 }
 
 /* FOOTER */
 
 footer{
 background:black;
+padding:25px;
 text-align:center;
-padding:20px;
 color:#aaa;
+margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+}
+
+nav ul{
+margin-top:10px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
 }
 
 </style>
@@ -211,7 +279,7 @@ if(service=="virus") price=100;
 if(service=="network") price=200;
 if(service=="data") price=150;
 
-document.getElementById("quoteResult").innerHTML=
+document.getElementById("quoteResult").innerHTML =
 "Estimated Service Cost: $" + price;
 
 }
@@ -224,14 +292,16 @@ document.getElementById("quoteResult").innerHTML=
 
 <nav>
 
-<h1>ONYXTECH</h1>
+<div class="logo">
+<img src="logo.png" alt="OnyxTech Logo">
+<strong>OnyxTech</strong>
+</div>
 
 <ul>
 <li><a href="#services">Services</a></li>
 <li><a href="#quote">Quote</a></li>
 <li><a href="#remote">Remote</a></li>
 <li><a href="#map">Service Area</a></li>
-<li><a href="#support">Support</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -239,12 +309,12 @@ document.getElementById("quoteResult").innerHTML=
 
 <section class="hero">
 
-<h2>OnyxTech Solutions L.L.C</h2>
+<h1>OnyxTech Solutions L.L.C</h1>
 
 <p>Computer Repair • Networking • Commercial Systems</p>
 
 <p>
-📞 203-800-8258  
+📞 203-800-8258<br>
 📧 robert@onyxtechsolutions.info
 </p>
 
@@ -254,7 +324,7 @@ document.getElementById("quoteResult").innerHTML=
 
 <section class="container" id="services">
 
-<h2 class="section-title">Services</h2>
+<h2 class="section-title">Professional IT Services</h2>
 
 <div class="grid">
 
@@ -272,7 +342,7 @@ document.getElementById("quoteResult").innerHTML=
 <h3>Commercial Systems</h3>
 <ul>
 <li>POS Setup & Repair</li>
-<li>Self Checkout Systems</li>
+<li>Self-Checkout Systems</li>
 <li>Lexmark Printers</li>
 <li>PVM Systems</li>
 </ul>
@@ -289,10 +359,11 @@ document.getElementById("quoteResult").innerHTML=
 </div>
 
 <div class="card">
-<h3>Security</h3>
+<h3>Security & Data</h3>
 <ul>
 <li>Virus Removal</li>
 <li>Malware Cleanup</li>
+<li>Hard Drive Recovery</li>
 <li>System Optimization</li>
 </ul>
 </div>
@@ -306,12 +377,10 @@ document.getElementById("quoteResult").innerHTML=
 <h2>Instant Service Quote</h2>
 
 <select id="service">
-
 <option value="repair">Computer Repair</option>
 <option value="virus">Virus Removal</option>
 <option value="network">Network Setup</option>
 <option value="data">Data Recovery</option>
-
 </select>
 
 <button onclick="calculateQuote()">Estimate</button>
@@ -340,44 +409,14 @@ src="https://maps.google.com/maps?q=Waterbury%20Connecticut&t=&z=11&ie=UTF8&iwlo
 
 </section>
 
-<section class="container" id="support">
-
-<h2 class="section-title">Support Ticket</h2>
-
-<form>
-
-<input type="text" placeholder="Name" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="text" placeholder="Device / System">
-
-<textarea placeholder="Describe the problem"></textarea>
-
-<button type="submit">Create Support Ticket</button>
-
-</form>
-
-</section>
-
-<section class="reviews">
-
-<h2>Customer Reviews</h2>
-
-<p>Google Reviews integration will appear here once your Google Business profile is connected.</p>
-
-</section>
-
 <section class="contact" id="contact">
 
-<h2>Book Service</h2>
+<h2 class="section-title">Book Service</h2>
 
 <form>
 
 <input type="text" placeholder="Name" required>
-
 <input type="email" placeholder="Email" required>
-
 <textarea rows="5" placeholder="Describe your issue"></textarea>
 
 <button type="submit">Submit Request</button>
