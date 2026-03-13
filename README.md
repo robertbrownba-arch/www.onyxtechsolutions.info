@@ -1,1 +1,397 @@
-# www.onyxtechsolutions.info
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Computer Repair Waterbury CT | OnyxTech Solutions L.L.C</title>
+
+<meta name="description" content="OnyxTech Solutions provides computer repair, networking installation, POS systems, virus removal and IT services in Waterbury Connecticut.">
+
+<meta name="keywords" content="computer repair Waterbury CT, IT support Waterbury, networking installation Connecticut, POS repair Waterbury">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial;
+background:#0b0f17;
+color:white;
+}
+
+/* NAVIGATION */
+
+nav{
+background:black;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:2px solid #00b7ff;
+}
+
+nav h1{
+color:#00b7ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+nav ul li a:hover{
+color:#00b7ff;
+}
+
+/* HERO */
+
+.hero{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:
+radial-gradient(circle at 20% 30%, #0b2c52 0%, transparent 40%),
+radial-gradient(circle at 80% 70%, #07172c 0%, transparent 40%),
+#000;
+}
+
+.hero h2{
+font-size:42px;
+}
+
+.button{
+margin-top:20px;
+background:#00b7ff;
+padding:12px 30px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:4px;
+}
+
+/* SECTION */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:60px 0;
+}
+
+.section-title{
+font-size:30px;
+color:#00b7ff;
+margin-bottom:30px;
+border-bottom:1px solid #333;
+padding-bottom:10px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#121826;
+padding:25px;
+border-radius:10px;
+border:1px solid #1d2b3f;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:#00b7ff;
+}
+
+/* QUOTE */
+
+.calculator{
+background:#05070d;
+padding:40px;
+text-align:center;
+}
+
+.calculator select,
+.calculator button{
+padding:10px;
+margin:10px;
+}
+
+/* MAP */
+
+.map{
+width:100%;
+height:400px;
+border:none;
+}
+
+/* FORMS */
+
+form input,
+form textarea{
+width:100%;
+max-width:500px;
+padding:12px;
+margin:10px auto;
+display:block;
+border:none;
+border-radius:5px;
+}
+
+form button{
+background:#00b7ff;
+padding:12px 25px;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact{
+background:#0b0f17;
+padding:60px 20px;
+text-align:center;
+}
+
+/* REVIEWS */
+
+.reviews{
+background:#05070d;
+padding:60px;
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+</style>
+
+<script>
+
+function calculateQuote(){
+
+let service=document.getElementById("service").value;
+
+let price=0;
+
+if(service=="repair") price=120;
+if(service=="virus") price=100;
+if(service=="network") price=200;
+if(service=="data") price=150;
+
+document.getElementById("quoteResult").innerHTML=
+"Estimated Service Cost: $" + price;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<nav>
+
+<h1>ONYXTECH</h1>
+
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#quote">Quote</a></li>
+<li><a href="#remote">Remote</a></li>
+<li><a href="#map">Service Area</a></li>
+<li><a href="#support">Support</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h2>OnyxTech Solutions L.L.C</h2>
+
+<p>Computer Repair • Networking • Commercial Systems</p>
+
+<p>
+📞 203-800-8258  
+📧 robert@onyxtechsolutions.info
+</p>
+
+<a class="button" href="#contact">Book Service</a>
+
+</section>
+
+<section class="container" id="services">
+
+<h2 class="section-title">Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Computer & Device Repair</h3>
+<ul>
+<li>Computer Repair</li>
+<li>Gaming Console Repair</li>
+<li>Tablet & Phone Repair</li>
+<li>Custom PC Builds</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Commercial Systems</h3>
+<ul>
+<li>POS Setup & Repair</li>
+<li>Self Checkout Systems</li>
+<li>Lexmark Printers</li>
+<li>PVM Systems</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Networking</h3>
+<ul>
+<li>Cat6 Installation</li>
+<li>MDF Setup</li>
+<li>Access Points</li>
+<li>Cradlepoint Configuration</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Security</h3>
+<ul>
+<li>Virus Removal</li>
+<li>Malware Cleanup</li>
+<li>System Optimization</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section class="calculator" id="quote">
+
+<h2>Instant Service Quote</h2>
+
+<select id="service">
+
+<option value="repair">Computer Repair</option>
+<option value="virus">Virus Removal</option>
+<option value="network">Network Setup</option>
+<option value="data">Data Recovery</option>
+
+</select>
+
+<button onclick="calculateQuote()">Estimate</button>
+
+<h3 id="quoteResult"></h3>
+
+</section>
+
+<section id="remote" class="container">
+
+<h2 class="section-title">Remote Support</h2>
+
+<p>Download our remote support tool and call us.</p>
+
+<a href="https://anydesk.com/en/downloads">
+<button>Download Remote Support</button>
+</a>
+
+</section>
+
+<section id="map">
+
+<iframe class="map"
+src="https://maps.google.com/maps?q=Waterbury%20Connecticut&t=&z=11&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</section>
+
+<section class="container" id="support">
+
+<h2 class="section-title">Support Ticket</h2>
+
+<form>
+
+<input type="text" placeholder="Name" required>
+
+<input type="email" placeholder="Email" required>
+
+<input type="text" placeholder="Device / System">
+
+<textarea placeholder="Describe the problem"></textarea>
+
+<button type="submit">Create Support Ticket</button>
+
+</form>
+
+</section>
+
+<section class="reviews">
+
+<h2>Customer Reviews</h2>
+
+<p>Google Reviews integration will appear here once your Google Business profile is connected.</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Book Service</h2>
+
+<form>
+
+<input type="text" placeholder="Name" required>
+
+<input type="email" placeholder="Email" required>
+
+<textarea rows="5" placeholder="Describe your issue"></textarea>
+
+<button type="submit">Submit Request</button>
+
+</form>
+
+</section>
+
+<footer>
+
+© 2026 OnyxTech Solutions L.L.C  
+Computer Repair Waterbury CT
+
+</footer>
+
+</body>
+</html>
